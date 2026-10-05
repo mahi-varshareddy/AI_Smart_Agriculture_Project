@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header>
+    <h1>🌾 AI Recommendation Result</h1>
+</header>
+
+<main>
+    <section class="result card">
+        <div class="crop">🌱 {{ crop }}</div>
+        <h2>Recommended Crop</h2>
+
+        <div class="irrigation">
+            💧 <strong>{{ irrigation }}</strong>
+        </div>
+
+        <h3>Input Conditions</h3>
+        <div class="grid">
+            <div class="metric">N: {{ values.N }}</div>
+            <div class="metric">P: {{ values.P }}</div>
+            <div class="metric">K: {{ values.K }}</div>
+            <div class="metric">Temperature: {{ values.temperature }} °C</div>
+            <div class="metric">Humidity: {{ values.humidity }} %</div>
+            <div class="metric">Soil Moisture: {{ values.soil_moisture }} %</div>
+            <div class="metric">pH: {{ values.ph }}</div>
+            <div class="metric">Rainfall: {{ values.rainfall }} mm</div>
+        </div>
+
+        <a class="button" href="{{ url_for('index') }}">← Back to Dashboard</a>
+    </section>
+</main>
+</body>
+</html>
